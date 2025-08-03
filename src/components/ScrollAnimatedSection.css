@@ -1,0 +1,82 @@
+/* Base scroll animation styles */
+.scroll-animated {
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* Rise animation */
+.scroll-animated.rise {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.scroll-animated.rise.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from left */
+.scroll-animated.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.scroll-animated.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from right */
+.scroll-animated.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.scroll-animated.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in */
+.scroll-animated.fade {
+  opacity: 0;
+}
+
+.scroll-animated.fade.visible {
+  opacity: 1;
+}
+
+/* Scale up */
+.scroll-animated.scale {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.scroll-animated.scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Zoom in */
+.scroll-animated.zoom {
+  opacity: 0;
+  transform: scale(0.5) translateY(30px);
+}
+
+.scroll-animated.zoom.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Animation wrapper styles */
+.project-animation-wrapper,
+.team-animation-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure proper spacing and layout preservation */
+.scroll-animated {
+  width: 100%;
+}
