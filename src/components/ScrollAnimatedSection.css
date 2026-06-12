@@ -69,6 +69,34 @@
   transform: scale(1) translateY(0);
 }
 
+/* Tumble in (rotate + drop into place) */
+.scroll-animated.tumble {
+  opacity: 0;
+  transform: translateY(50px) rotate(-10deg) scale(0.92);
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scroll-animated.tumble.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg) scale(1);
+}
+
+/* Wipe in (reveal from left to right) */
+.scroll-animated.wipe {
+  opacity: 0;
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+  transition-property: clip-path, -webkit-clip-path, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: clip-path, opacity;
+}
+
+.scroll-animated.wipe.visible {
+  opacity: 1;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
 /* Animation wrapper styles */
 .project-animation-wrapper,
 .team-animation-wrapper {

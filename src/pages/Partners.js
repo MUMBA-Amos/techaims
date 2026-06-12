@@ -45,7 +45,7 @@ const Partners = () => {
         <section className="partners-cta">
           <h2>Interested in partnering with us?</h2>
           <p>We work closely with a select number of organizations to deliver intelligent software that makes a difference.</p>
-          <a className="partners-btn" href="mailto:TechAimz@gmail.com">Get In Touch</a>
+          <a className="partners-btn" href="mailto:contact@techaimz.com">Get In Touch</a>
         </section>
       </div>
     </div>

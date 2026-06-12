@@ -9,6 +9,8 @@ import Founder from './pages/Founder';
 import Projects from './pages/Projects';
 import CaseStudy from './pages/CaseStudy';
 import Partners from './pages/Partners';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/case-study/:slug" element={<CaseStudy />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />

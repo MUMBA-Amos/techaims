@@ -70,8 +70,12 @@ const WhatWeDo = () => {
           End-to-end AI and software capabilities, delivered with a focus on the public sector.
         </p>
         <div className="wwd-grid">
-          {capabilities.map((cap) => (
-            <div className="wwd-card" key={cap.title}>
+          {capabilities.map((cap, index) => (
+            <div
+              className="wwd-card"
+              key={cap.title}
+              style={{ animationDelay: `${index * 0.12}s` }}
+            >
               <div className="wwd-icon">{cap.icon}</div>
               <h3 className="wwd-card-title">{cap.title}</h3>
               <p className="wwd-card-desc">{cap.description}</p>

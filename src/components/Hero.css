@@ -1,37 +1,50 @@
 .hero-section {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, #0f2557 0%, #1d3f8f 55%, #2f6bed 100%);
   position: relative;
   overflow: hidden;
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(80px + 2rem) 2rem 4rem;
 }
 
-.hero-section::before {
-  content: '';
+/* Decorative neuron field behind the content */
+.hero-neurons {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(79, 140, 255, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.08) 0%, transparent 45%);
-  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-neurons .neuron-links line {
+  opacity: 0.06;
+}
+
+.hero-neurons .neuron-nodes circle {
+  opacity: 0.28;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: neuronPulse 4s ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes neuronPulse {
+  0%, 100% { transform: scale(1); opacity: 0.28; }
+  50% { transform: scale(1.5); opacity: 0.5; }
 }
 
 .hero-inner {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 
 .hero-content {
@@ -39,71 +52,98 @@
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: clamp(2.4rem, 4.6vw, 3.8rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #0f1b33;
+  line-height: 1.07;
+  letter-spacing: -0.035em;
   margin-bottom: 1.5rem;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hero-description {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2.5rem;
-  max-width: 600px;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+  color: #667085;
+  max-width: 540px;
+  margin-bottom: 2rem;
+  font-weight: 400;
 }
 
 .hero-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem 1.75rem;
 }
 
 .hero-btn {
   display: inline-block;
-  padding: 0.9rem 1.8rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-.hero-btn-primary {
-  background: #ffffff;
-  color: #1d3f8f;
-}
-
-.hero-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.hero-btn-secondary {
-  background: transparent;
+  background: #2f6bed;
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 0.85rem 1.7rem;
+  border-radius: 980px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s ease;
 }
 
-.hero-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateY(-2px);
+.hero-btn:hover {
+  background: #2059d6;
 }
 
-/* Network illustration */
-.hero-visual {
+.hero-link {
+  color: #2f6bed;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hero-link:hover {
+  text-decoration: underline;
+}
+
+/* Apple-style card holding the brand mark */
+.hero-card {
+  background: linear-gradient(160deg, #f6f8fc 0%, #e9f0fd 100%);
+  border: 1px solid rgba(15, 27, 51, 0.05);
+  border-radius: 28px;
+  box-shadow: 0 30px 60px rgba(15, 27, 51, 0.1);
+  padding: 3rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .hero-network {
   width: 100%;
-  max-width: 380px;
+  max-width: 260px;
   height: auto;
+  transform-origin: center;
+  animation: networkSpin 24s linear infinite;
+}
+
+.hero-card:hover .hero-network {
+  animation-play-state: paused;
+}
+
+.hero-card-wordmark {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f1b33;
+}
+
+.wordmark-accent {
+  color: #2f6bed;
 }
 
 .net-core {
@@ -123,7 +163,6 @@
 }
 
 .net-lines line {
-  opacity: 0.5;
   animation: lineGlow 3s ease-in-out infinite;
 }
 
@@ -134,19 +173,24 @@
 
 @keyframes nodeFloat {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.85); opacity: 0.8; }
+  50% { transform: scale(0.85); opacity: 0.75; }
 }
 
 @keyframes lineGlow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.7; }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes networkSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 900px) {
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .hero-content {
@@ -162,26 +206,21 @@
     justify-content: center;
   }
 
-  .hero-visual {
+  .hero-card {
     order: -1;
-  }
-
-  .hero-network {
-    max-width: 260px;
+    aspect-ratio: auto;
+    padding: 2.5rem;
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.1rem;
-  }
-
   .hero-section {
-    padding: 3.5rem 1.25rem;
-    min-height: auto;
+    padding: calc(80px + 2.5rem) 1.25rem 3.5rem;
   }
 
-  .hero-description {
-    font-size: 0.98rem;
+  .hero-network {
+    max-width: 200px;
   }
 }

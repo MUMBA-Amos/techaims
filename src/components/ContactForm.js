@@ -24,7 +24,7 @@ const ContactForm = () => {
       `Email: ${formData.email}\n\n` +
       `${formData.message}`;
     window.location.href =
-      `mailto:TechAimz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      `mailto:contact@techaimz.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleSubmit = async (e) => {
@@ -112,7 +112,7 @@ const ContactForm = () => {
 
           {status === 'error' && (
             <p className="form-status form-status-error">
-              Something went wrong sending your message. Please email us directly at TechAimz@gmail.com.
+              Something went wrong sending your message. Please email us directly at contact@techaimz.com.
             </p>
           )}
         </form>

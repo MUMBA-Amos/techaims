@@ -11,15 +11,11 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <ScrollAnimatedSection animation="rise" delay={0.1}>
-        <WhatWeDo />
-      </ScrollAnimatedSection>
+      <WhatWeDo />
       <ScrollAnimatedSection animation="rise" delay={0.2}>
         <About />
       </ScrollAnimatedSection>
-      <ScrollAnimatedSection animation="slide-left" delay={0.1}>
-        <Services />
-      </ScrollAnimatedSection>
+      <Services />
       <div id="contact">
         <ScrollAnimatedSection animation="rise" delay={0.1}>
           <Contact />

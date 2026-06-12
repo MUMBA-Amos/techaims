@@ -4,9 +4,9 @@ import './About.css';
 const About = () => {
   return (
     <section className="about-section">
-      <h2 className="about-title">ABOUT US.</h2>
+      <p className="about-eyebrow">About TechAimz</p>
       <p className="about-description">
-        Welcome to TechAimz, your innovation partner in AI and web technology. Founded in 2023, TechAimz is a forward-thinking tech company focused on helping businesses harness the power of automation, machine learning, and digital platforms to achieve measurable growth. We specialize in building smart AI solutions and high-performance websites that empower organizations to scale efficiently and compete in the digital age. At TechAimz, we believe technology should work for you, not the other way around.
+        TechAimz is a boutique software studio that builds intelligent systems for government and public institutions. We use AI, automation, and secure modern engineering to help the public sector work more efficiently and deliver better services to the people it serves.
       </p>
     </section>
   );

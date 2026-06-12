@@ -114,7 +114,7 @@ const Projects = () => {
           <div className="cta-content">
             <h2>Ready to Start Your Project?</h2>
             <p>Let's discuss how we can bring your vision to life with intelligent technology.</p>
-            <a className="cta-button" href="mailto:TechAimz@gmail.com">Get In Touch</a>
+            <a className="cta-button" href="mailto:contact@techaimz.com">Get In Touch</a>
           </div>
         </section>
       </div>

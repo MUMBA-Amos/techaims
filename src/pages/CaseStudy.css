@@ -1,56 +1,41 @@
 .case-page {
   min-height: 100vh;
-  background: #f6f8fc;
+  background: #f5f5f7;
 }
 
 /* Hero */
 .case-hero {
   text-align: center;
-  padding: calc(80px + 3rem) 2rem 5rem; /* top accounts for fixed navbar */
-  background: linear-gradient(135deg, #0f2557 0%, #1d3f8f 55%, #2f6bed 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.case-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 80% 15%, rgba(79, 140, 255, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 15% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 45%);
+  padding: calc(80px + 3.5rem) 2rem 3.5rem; /* top accounts for fixed navbar */
+  background: #ffffff;
 }
 
 .case-eyebrow {
-  position: relative;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: #2f6bed;
   margin-bottom: 0.75rem;
 }
 
 .case-title {
-  position: relative;
-  font-size: 2.8rem;
+  font-size: clamp(2.2rem, 4.6vw, 3.2rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #0f1b33;
+  letter-spacing: -0.03em;
   margin-bottom: 0.75rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .case-subtitle {
-  position: relative;
-  font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: #667085;
   max-width: 620px;
   margin: 0 auto 2rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .case-meta {
-  position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -58,8 +43,8 @@
 }
 
 .case-meta-chip {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: #eef3ff;
+  color: #1d3f8f;
   font-size: 0.85rem;
   font-weight: 500;
   padding: 0.45rem 0.9rem;
@@ -180,7 +165,7 @@
 .case-cta {
   text-align: center;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, #0f2557 0%, #1d3f8f 55%, #2f6bed 100%);
+  background: linear-gradient(165deg, #0f2557 0%, #16336e 100%);
   border-radius: 18px;
   color: #ffffff;
   margin-top: 1rem;
@@ -189,6 +174,7 @@
 .case-cta h2 {
   font-size: 1.8rem;
   font-weight: 700;
+  color: #ffffff;
   margin-bottom: 0.75rem;
 }
 

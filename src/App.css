@@ -4,6 +4,7 @@
 }
 
 .main-content {
-  margin-top: 80px; /* Account for fixed navbar */
+  /* Each page's hero pads for the fixed navbar itself (calc(80px + ...)),
+     so no global offset is needed here. */
   padding: 0;
 }

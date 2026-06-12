@@ -1,86 +1,102 @@
 .what-we-do {
-  padding: 5rem 2rem;
-  background: #ffffff;
+  padding: 7rem 2rem;
+  background: #f5f5f7;
 }
 
 .wwd-container {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
   text-align: center;
 }
 
 .wwd-title {
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: #1a2a4a;
-  margin-bottom: 0.75rem;
+  color: #0f1b33;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
 }
 
 .wwd-subtitle {
-  font-size: 1.05rem;
-  color: #666;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  color: #667085;
   max-width: 640px;
-  margin: 0 auto 3rem;
-  line-height: 1.6;
+  margin: 0 auto 3.5rem;
+  line-height: 1.5;
 }
 
 .wwd-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
 .wwd-card {
-  background: #f8f9fb;
-  border: 1px solid #e9ecef;
-  border-radius: 14px;
-  padding: 2rem 1.5rem;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 2.5rem 2rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: wwdTumbleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes wwdTumbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotate(-10deg) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wwd-card {
+    animation: none;
+  }
 }
 
 .wwd-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(47, 107, 237, 0.12);
-  border-color: #2f6bed;
+  box-shadow: 0 18px 40px rgba(15, 27, 51, 0.1);
 }
 
 .wwd-icon {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 1.25rem;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(47, 107, 237, 0.1);
-  border-radius: 16px;
+  background: #eef3ff;
+  border-radius: 20px;
 }
 
 .wwd-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 }
 
 .wwd-card-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #1a2a4a;
+  color: #0f1b33;
+  letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
 }
 
 .wwd-card-desc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #667085;
   margin: 0;
 }
 
 @media (max-width: 768px) {
   .what-we-do {
-    padding: 3.5rem 1.25rem;
-  }
-
-  .wwd-title {
-    font-size: 1.8rem;
+    padding: 4.5rem 1.25rem;
   }
 }

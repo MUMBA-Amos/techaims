@@ -98,7 +98,7 @@ const CaseStudy = () => {
           <h2>Have a similar challenge?</h2>
           <p>Let's talk about how AI and automation can save your team time.</p>
           <div className="case-cta-actions">
-            <a className="case-btn case-btn-primary" href="mailto:TechAimz@gmail.com">Get In Touch</a>
+            <a className="case-btn case-btn-primary" href="mailto:contact@techaimz.com">Get In Touch</a>
             <Link className="case-btn case-btn-secondary" to="/projects">Back to Projects</Link>
           </div>
         </section>

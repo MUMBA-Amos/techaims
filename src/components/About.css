@@ -1,35 +1,30 @@
 .about-section {
-  padding: 4rem 2rem;
-  max-width: 900px;
+  padding: 7rem 2rem;
+  max-width: 1000px;
   margin: 0 auto;
-}
-
-.about-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #333;
   text-align: center;
-  position: relative;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
 }
 
-.about-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background-color: #333;
+.about-eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #2f6bed;
+  margin-bottom: 1.5rem;
 }
 
 .about-description {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #555;
-  text-align: center;
-  max-width: 800px;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: #0f1b33;
+  max-width: 880px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4.5rem 1.25rem;
+  }
 }

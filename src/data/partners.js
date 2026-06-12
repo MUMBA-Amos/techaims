@@ -7,7 +7,7 @@ const partners = [
     relationship: 'Client',
     sector: 'Healthcare AI',
     description:
-      'A healthcare start-up building a patient analytics and reporting platform. TechAimz designed and built their AI-powered platform end to end, cutting manual reporting time by 80%.',
+      'A healthcare start-up building an AI-powered patient analytics and reporting platform that helps clinical teams turn intake data into clear, actionable reports.',
     link: '/case-study/baseline-health',
     linkLabel: 'View case study',
   },
