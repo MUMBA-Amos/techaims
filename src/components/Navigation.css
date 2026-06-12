@@ -105,6 +105,7 @@
 
   .nav-toggle {
     display: flex;
+    grid-column: 2;
   }
 
   .nav-links {
