@@ -1,0 +1,86 @@
+.what-we-do {
+  padding: 5rem 2rem;
+  background: #ffffff;
+}
+
+.wwd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wwd-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a2a4a;
+  margin-bottom: 0.75rem;
+}
+
+.wwd-subtitle {
+  font-size: 1.05rem;
+  color: #666;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.wwd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+}
+
+.wwd-card {
+  background: #f8f9fb;
+  border: 1px solid #e9ecef;
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.wwd-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(47, 107, 237, 0.12);
+  border-color: #2f6bed;
+}
+
+.wwd-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(47, 107, 237, 0.1);
+  border-radius: 16px;
+}
+
+.wwd-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.wwd-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a2a4a;
+  margin-bottom: 0.75rem;
+}
+
+.wwd-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .what-we-do {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .wwd-title {
+    font-size: 1.8rem;
+  }
+}

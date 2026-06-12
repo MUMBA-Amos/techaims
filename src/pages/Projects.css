@@ -1,72 +1,136 @@
 .projects-page {
   min-height: 100vh;
-  padding-top: 80px; /* Account for fixed navbar */
+  background: #f6f8fc;
+}
+
+/* Hero */
+.projects-hero {
+  text-align: center;
+  padding: calc(80px + 3rem) 2rem 5rem; /* top accounts for fixed navbar */
+  background: linear-gradient(135deg, #0f2557 0%, #1d3f8f 55%, #2f6bed 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(79, 140, 255, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 15% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 45%);
+}
+
+.projects-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.projects-subtitle {
+  position: relative;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.projects-stats {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.4rem;
 }
 
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.projects-hero {
-  text-align: center;
-  padding: 4rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  margin-bottom: 4rem;
-}
-
-.projects-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.projects-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin: 0;
+  padding: 0 2rem 4rem;
 }
 
 .projects-content {
-  padding: 2rem 0;
+  padding: 3.5rem 0 2rem;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
 }
 
+/* Card */
 .project-card {
-  background: #fff;
-  border-radius: 12px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(15, 37, 87, 0.07);
+  border: 1px solid #eef1f6;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e9ecef;
+  height: 100%;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--accent, #2f6bed);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(15, 37, 87, 0.14);
 }
+
+/* Category accent colors */
+.cat-ai-solutions { --accent: #2f6bed; }
+.cat-cloud-devops { --accent: #7c3aed; }
+.cat-web-development { --accent: #0ea5e9; }
+.cat-mobile-development { --accent: #10b981; }
 
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
 }
 
 .project-category {
-  background: #333;
+  background: var(--accent, #2f6bed);
   color: white;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -79,6 +143,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .project-status.completed {
@@ -97,26 +162,25 @@
 }
 
 .project-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a2a4a;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .project-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 2rem;
-  text-align: justify;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: #4a5468;
+  margin-bottom: 1.75rem;
 }
 
 .project-technologies h4 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 1rem;
+  color: #8893a7;
+  margin-bottom: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -128,71 +192,83 @@
 }
 
 .tech-tag {
-  background: #f8f9fa;
-  color: #495057;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
+  background: #eef3ff;
+  color: #1d3f8f;
+  padding: 0.32rem 0.8rem;
+  border-radius: 14px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid #dee2e6;
 }
 
+.project-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--accent, #2f6bed);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.25s ease, opacity 0.25s ease;
+}
+
+.project-link:hover {
+  opacity: 0.75;
+}
+
+/* CTA */
 .projects-cta {
-  background: linear-gradient(135deg, #333 0%, #555 100%);
+  background: linear-gradient(135deg, #0f2557 0%, #1d3f8f 55%, #2f6bed 100%);
   color: white;
   padding: 4rem 2rem;
-  border-radius: 12px;
+  border-radius: 18px;
   text-align: center;
-  margin: 4rem 0;
+  margin: 3rem 0 0;
 }
 
 .cta-content h2 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .cta-content p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .cta-button {
+  display: inline-block;
   background: white;
-  color: #333;
+  color: #1d3f8f;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 2.2rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
+  text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .projects-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
-  
+
+  .projects-stats {
+    gap: 1.5rem;
+  }
+
   .projects-hero {
-    padding: 3rem 0;
-  }
-  
-  .project-card {
-    padding: 1.5rem;
-  }
-  
-  .projects-cta {
-    padding: 3rem 1rem;
+    padding: 3.5rem 1.25rem 4rem;
   }
 }

@@ -35,29 +35,15 @@
   font-size: 1.2rem;
 }
 
-.footer-brand-icon {
-  background-color: #333;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: auto;
-}
-
-.footer-icon-text {
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0px;
-  white-space: nowrap;
-}
-
 .footer-brand-text {
   color: #fff;
-  font-weight: 400;
+  font-weight: 700;
+  font-size: 1.5rem;
   letter-spacing: 0px;
+}
+
+.footer-brand-accent {
+  color: #2f6bed;
 }
 
 .footer-tagline {

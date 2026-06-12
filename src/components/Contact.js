@@ -7,7 +7,7 @@ const Contact = () => {
   };
 
   const handleEmailClick = () => {
-    window.open('mailto:TechAims@gmail.com');
+    window.open('mailto:TechAimz@gmail.com');
   };
 
   return (
@@ -19,7 +19,7 @@ const Contact = () => {
         </div>
         <div className="contact-item" onClick={handleEmailClick} title="Click to send email">
           <span className="contact-label">EMAIL:</span>
-          <span className="contact-value">TechAims@gmail.com</span>
+          <span className="contact-value">TechAimz@gmail.com</span>
         </div>
       </div>
     </section>

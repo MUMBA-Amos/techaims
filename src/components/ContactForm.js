@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
+import { supabase } from '../lib/supabaseClient';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData({
@@ -15,22 +17,52 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const openMailFallback = () => {
+    const subject = `Website enquiry from ${formData.name}`;
+    const body =
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `${formData.message}`;
+    window.location.href =
+      `mailto:TechAimz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add your form submission logic here
+
+    // If Supabase isn't configured, fall back to opening the email client.
+    if (!supabase) {
+      openMailFallback();
+      setStatus('success');
+      return;
+    }
+
+    setStatus('sending');
+    const { error } = await supabase.from('contact_submissions').insert({
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    });
+
+    if (error) {
+      console.error('Supabase insert failed:', error);
+      setStatus('error');
+      return;
+    }
+
+    setStatus('success');
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
     <section className="contact-form-section">
       <div className="contact-form-container">
         <h2 className="contact-form-title">Contact us today</h2>
-        
+
         <div className="contact-form-tagline">
           <p>Are you ready to elevate your brand's online presence and engage with your audience like never before?</p>
         </div>
-        
+
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -43,7 +75,7 @@ const ContactForm = () => {
               required
             />
           </div>
-          
+
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -55,7 +87,7 @@ const ContactForm = () => {
               required
             />
           </div>
-          
+
           <div className="form-group">
             <label htmlFor="message">Message</label>
             <textarea
@@ -67,10 +99,22 @@ const ContactForm = () => {
               required
             ></textarea>
           </div>
-          
-          <button type="submit" className="send-button">
-            SEND &gt;
+
+          <button type="submit" className="send-button" disabled={status === 'sending'}>
+            {status === 'sending' ? 'SENDING…' : 'SEND >'}
           </button>
+
+          {status === 'success' && (
+            <p className="form-status">
+              Thanks for reaching out! We’ve received your message and will get back to you soon.
+            </p>
+          )}
+
+          {status === 'error' && (
+            <p className="form-status form-status-error">
+              Something went wrong sending your message. Please email us directly at TechAimz@gmail.com.
+            </p>
+          )}
         </form>
       </div>
     </section>

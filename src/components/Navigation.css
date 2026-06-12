@@ -27,32 +27,16 @@
   text-decoration: none;
 }
 
-.brand-icon {
-  background-color: #333;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: auto;
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
-.icon-text {
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0px;
-  white-space: nowrap;
-}
-
-/* Removed complex animations for cleaner look */
-
-.brand-text {
-  color: #333;
-  font-weight: 400;
-  letter-spacing: 0px;
+@media (max-width: 768px) {
+  .brand-logo {
+    height: 36px;
+  }
 }
 
 .nav-links {

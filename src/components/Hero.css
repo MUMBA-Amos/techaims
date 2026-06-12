@@ -1,13 +1,10 @@
 .hero-section {
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-  max-width: 100%;
-  margin: 0 auto;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #0f2557 0%, #1d3f8f 55%, #2f6bed 100%);
   position: relative;
   overflow: hidden;
 }
@@ -19,51 +16,172 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(79, 140, 255, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.08) 0%, transparent 45%);
   z-index: 1;
 }
 
-.hero-section > * {
+.hero-inner {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-content {
+  text-align: left;
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.8rem;
+  font-weight: 700;
   color: #ffffff;
-  margin-bottom: 2rem;
-  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
   letter-spacing: -0.5px;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  max-width: 900px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hero-description {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.75;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 3rem;
-  max-width: 800px;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.hero-btn-primary {
+  background: #ffffff;
+  color: #1d3f8f;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Network illustration */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-network {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+.net-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: corePulse 2.8s ease-in-out infinite;
+}
+
+.net-nodes circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nodeFloat 3.5s ease-in-out infinite;
+}
+
+.net-nodes circle:nth-child(odd) {
+  animation-delay: 0.6s;
+}
+
+.net-lines line {
+  opacity: 0.5;
+  animation: lineGlow 3s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+@keyframes nodeFloat {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.85); opacity: 0.8; }
+}
+
+@keyframes lineGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-network {
+    max-width: 260px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
-  
+
   .hero-section {
-    padding: 2rem 1rem;
-    min-height: 60vh;
+    padding: 3.5rem 1.25rem;
+    min-height: auto;
   }
-  
+
   .hero-description {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
   }
 }

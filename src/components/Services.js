@@ -9,16 +9,23 @@ const Services = () => {
         
         <div className="services-grid">
           <div className="service-item">
-            <h3 className="service-title">ARTIFICIAL INTELLIGENCE SOLUTIONS</h3>
+            <h3 className="service-title">AI & INTELLIGENT AUTOMATION</h3>
             <p className="service-description">
-              At TechAims, we design AI solutions that do more than just automate — they think, learn, and evolve with your business. Whether you're looking for intelligent chatbots, predictive analytics, custom machine learning models, or workflow automation, our AI tools are built to deliver real results. We simplify complex processes and help you make faster, smarter decisions through tailored, data-driven solutions.
+              We design AI systems that do more than automate; they understand, analyse, and act. From intelligent assistants for citizen and staff services to automated report and document generation, predictive analytics, and decision-ready dashboards, our solutions cut manual effort and help public institutions make faster, better-informed decisions through secure, data-driven tools.
             </p>
           </div>
-          
+
           <div className="service-item">
-            <h3 className="service-title">WEB DEVELOPMENT SERVICES</h3>
+            <h3 className="service-title">WEB & MOBILE PLATFORMS</h3>
             <p className="service-description">
-              Your website is more than a digital business card — it's your first impression and your hardest-working employee. At TechAims, we craft sleek, responsive, and high-performance websites and web applications that engage users and drive conversions. From clean front-end designs to robust backend systems, we build scalable platforms tailored to your goals, optimized for both speed and visibility.
+              We build secure, high-performance web and mobile applications, from grant and research management systems to cross-platform apps published on the App Store and Google Play. With clean front-end design and robust backend systems, we deliver scalable platforms that serve citizens, staff, and stakeholders reliably and accessibly.
+            </p>
+          </div>
+
+          <div className="service-item">
+            <h3 className="service-title">CLOUD & DEVOPS</h3>
+            <p className="service-description">
+              We deploy and maintain the secure, scalable infrastructure that keeps critical systems running. Using containerised, auto-scaling architecture on AWS and Kubernetes with automated CI/CD pipelines, we ensure high availability, smooth updates, and dependable performance, so your services stay online and your data stays protected.
             </p>
           </div>
         </div>

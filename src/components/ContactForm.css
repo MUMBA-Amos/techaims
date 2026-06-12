@@ -105,6 +105,29 @@
   background-color: #555;
 }
 
+.form-status {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #eef3ff;
+  border-left: 4px solid #2f6bed;
+  border-radius: 0 8px 8px 0;
+  color: #1d3f8f;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-status-error {
+  background: #fdecea;
+  border-left-color: #d93025;
+  color: #a52714;
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .contact-form-title {
     font-size: 2rem;

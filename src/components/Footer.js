@@ -9,10 +9,7 @@ const Footer = () => {
           <div className="footer-section">
             <div className="footer-brand">
               <div className="footer-logo">
-                <div className="footer-brand-icon">
-                  <span className="footer-icon-text">T'Aimas</span>
-                </div>
-                <span className="footer-brand-text">TechAims</span>
+                <span className="footer-brand-text">Tech<span className="footer-brand-accent">Aimz</span></span>
               </div>
               <p className="footer-tagline">
                 Building smarter businesses with AI & Web innovation.
@@ -25,8 +22,8 @@ const Footer = () => {
             <ul className="footer-links">
               <li><a href="#ai-solutions">AI Solutions</a></li>
               <li><a href="#web-development">Web Development</a></li>
-              <li><a href="#automation">Automation</a></li>
-              <li><a href="#consulting">Tech Consulting</a></li>
+              <li><a href="#mobile-development">Mobile App Development</a></li>
+              <li><a href="#cloud-devops">Cloud & DevOps</a></li>
             </ul>
           </div>
           
@@ -44,15 +41,15 @@ const Footer = () => {
             <h3 className="footer-title">Contact Info</h3>
             <div className="footer-contact">
               <p>📞 +60176307134</p>
-              <p>✉️ TechAims@gmail.com</p>
-              <p>🌐 www.techaims.com</p>
+              <p>✉️ TechAimz@gmail.com</p>
+              <p>🌐 www.techaimz.com</p>
             </div>
           </div>
         </div>
         
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <p>&copy; 2024 TechAims. All rights reserved.</p>
+            <p>&copy; 2024 TechAimz. All rights reserved.</p>
           </div>
           <div className="footer-legal">
             <a href="#privacy">Privacy Policy</a>

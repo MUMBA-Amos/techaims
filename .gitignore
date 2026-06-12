@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local env
+.env
+
+# personal CV - contains private data, never commit
+Mumba Amos Ntambo Software Engineering CV (3).pdf
+*.pdf
+
+# loose source asset (logo is served from public/images)
+techaimz-logo-transparent.png
