@@ -1,5 +1,6 @@
 import React from 'react';
 import './WhatWeDo.css';
+import ScrollAnimatedSection from './ScrollAnimatedSection';
 
 const capabilities = [
   {
@@ -71,15 +72,18 @@ const WhatWeDo = () => {
         </p>
         <div className="wwd-grid">
           {capabilities.map((cap, index) => (
-            <div
-              className="wwd-card"
+            <ScrollAnimatedSection
               key={cap.title}
-              style={{ animationDelay: `${index * 0.12}s` }}
+              animation="tumble"
+              delay={index * 0.12}
+              className="wwd-animation-wrapper"
             >
-              <div className="wwd-icon">{cap.icon}</div>
-              <h3 className="wwd-card-title">{cap.title}</h3>
-              <p className="wwd-card-desc">{cap.description}</p>
-            </div>
+              <div className="wwd-card">
+                <div className="wwd-icon">{cap.icon}</div>
+                <h3 className="wwd-card-title">{cap.title}</h3>
+                <p className="wwd-card-desc">{cap.description}</p>
+              </div>
+            </ScrollAnimatedSection>
           ))}
         </div>
       </div>

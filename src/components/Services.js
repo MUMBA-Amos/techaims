@@ -1,5 +1,6 @@
 import React from 'react';
 import './Services.css';
+import ScrollAnimatedSection from './ScrollAnimatedSection';
 
 const services = [
   {
@@ -27,14 +28,18 @@ const Services = () => {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div
-              className="service-card"
+            <ScrollAnimatedSection
               key={service.title}
-              style={{ animationDelay: `${index * 0.18}s` }}
+              animation="slide-left"
+              delay={index * 0.18}
+              duration={0.6}
+              className="service-animation-wrapper"
             >
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-            </div>
+              <div className="service-card">
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+              </div>
+            </ScrollAnimatedSection>
           ))}
         </div>
       </div>

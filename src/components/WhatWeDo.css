@@ -32,6 +32,10 @@
   align-items: stretch;
 }
 
+.wwd-animation-wrapper {
+  height: 100%;
+}
+
 .wwd-card {
   height: 100%;
   background: #ffffff;
@@ -39,24 +43,6 @@
   padding: 2.5rem 2rem;
   text-align: center;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-  animation: wwdTumbleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-
-@keyframes wwdTumbleIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px) rotate(-10deg) scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wwd-card {
-    animation: none;
-  }
 }
 
 .wwd-card:hover {
