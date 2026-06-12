@@ -35,7 +35,7 @@ const Founder = () => {
         <ScrollAnimatedSection animation="rise" delay={0.1}>
           <div className="founder-card">
             <img
-              src="/images/founder-photo.jpeg"
+              src="/images/founder-photo.jpg"
               alt="Mumba Amos Ntambo"
               className="founder-photo"
             />
