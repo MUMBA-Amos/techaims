@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './ContactForm.css';
 import { supabase } from '../lib/supabaseClient';
 
+// Public Web3Forms access key (safe to expose in client code).
+const WEB3FORMS_KEY = '5343e8b7-cf91-43af-bf21-1fcc148f9269';
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,41 +20,51 @@ const ContactForm = () => {
     });
   };
 
-  const openMailFallback = () => {
-    const subject = `Website enquiry from ${formData.name}`;
-    const body =
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n\n` +
-      `${formData.message}`;
-    window.location.href =
-      `mailto:contact@techaimz.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // If Supabase isn't configured, fall back to opening the email client.
-    if (!supabase) {
-      openMailFallback();
-      setStatus('success');
-      return;
-    }
-
     setStatus('sending');
-    const { error } = await supabase.from('contact_submissions').insert({
-      name: formData.name,
-      email: formData.email,
-      message: formData.message
-    });
 
-    if (error) {
-      console.error('Supabase insert failed:', error);
-      setStatus('error');
-      return;
+    // 1. Save a copy to Supabase (backup), if configured.
+    if (supabase) {
+      const { error } = await supabase.from('contact_submissions').insert({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      });
+      if (error) console.error('Supabase insert failed:', error);
     }
 
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
+    // 2. Email the enquiry to our inbox via Web3Forms.
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New enquiry from ${formData.name}`,
+          from_name: 'TechAimz Website',
+          replyto: formData.email,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        console.error('Web3Forms error:', data);
+        setStatus('error');
+      }
+    } catch (err) {
+      console.error('Web3Forms request failed:', err);
+      setStatus('error');
+    }
   };
 
   return (
