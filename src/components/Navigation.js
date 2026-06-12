@@ -11,6 +11,7 @@ const Navigation = () => {
         </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">HOME</Link>
+          <Link to="/partners" className="nav-link">Our Partners</Link>
           <Link to="/founder" className="nav-link">FOUNDER</Link>
           <Link to="/projects" className="nav-link">PROJECTS</Link>
         </div>
