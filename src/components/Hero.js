@@ -44,12 +44,12 @@ const Hero = () => {
         <div className="hero-content">
           <AnimatedHeading
             className="hero-title"
-            text={'AI solutions for government\nand the public sector.'}
+            text={'AI Solutions for Government\nand the Public Sector.'}
           />
 
           <FadeIn delay={800} duration={1000}>
             <p className="hero-description">
-              We help public institutions work smarter — automating reporting,
+              We help public institutions work smarter, automating reporting,
               turning data into insight, and building secure platforms people
               can trust.
             </p>

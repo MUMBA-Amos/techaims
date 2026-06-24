@@ -35,10 +35,10 @@ const Navigation = () => {
 
           {/* Desktop inline links */}
           <div className="nav-links">
-            <Link to="/" className="nav-link">HOME</Link>
+            <Link to="/" className="nav-link">Home</Link>
             <Link to="/partners" className="nav-link">Our Partners</Link>
-            <Link to="/founder" className="nav-link">FOUNDER</Link>
-            <Link to="/projects" className="nav-link">PROJECTS</Link>
+            <Link to="/founder" className="nav-link">Founder</Link>
+            <Link to="/projects" className="nav-link">Projects</Link>
           </div>
         </div>
       </nav>
@@ -56,10 +56,10 @@ const Navigation = () => {
           &times;
         </button>
         <nav className="drawer-links">
-          <Link to="/" className="drawer-link" onClick={close}>HOME</Link>
+          <Link to="/" className="drawer-link" onClick={close}>Home</Link>
           <Link to="/partners" className="drawer-link" onClick={close}>Our Partners</Link>
-          <Link to="/founder" className="drawer-link" onClick={close}>FOUNDER</Link>
-          <Link to="/projects" className="drawer-link" onClick={close}>PROJECTS</Link>
+          <Link to="/founder" className="drawer-link" onClick={close}>Founder</Link>
+          <Link to="/projects" className="drawer-link" onClick={close}>Projects</Link>
         </nav>
       </aside>
     </>

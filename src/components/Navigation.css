@@ -46,8 +46,7 @@
   color: #666;
   font-weight: 500;
   font-size: 0.9rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   transition: color 0.3s ease;
   white-space: nowrap;
 }
@@ -152,8 +151,7 @@
   color: #0f1b33;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   text-align: center;
   padding: 0.9rem 0.5rem;
   border-radius: 12px;

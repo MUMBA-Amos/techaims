@@ -57,13 +57,13 @@ const Founder = () => {
               <section className="founder-block">
                 <h3 className="block-title">The Story</h3>
                 <p>
-                  Founded in 2023, TechAimz was born from a belief that government and public institutions deserve the same intelligent technology transforming the private sector. With a comprehensive education in Computer Science specializing in Artificial Intelligence from Swinburne University, our founder recognized that public agencies don't just need to adopt technology; they need to truly harness its power to deliver smarter, more efficient services.
+                  Founded in 2023, TechAimz began with a simple frustration. While the private sector races ahead with intelligent technology, Government and Public Institutions are too often left behind, buried in manual reports and systems that work against the very people they serve. We exist to close that gap.
                 </p>
                 <blockquote className="founder-quote">
                   Technology should work for you, not the other way around.
                 </blockquote>
                 <p>
-                  This philosophy drives everything we do at TechAimz. Combining academic foundations with hands-on experience building research, analytics, and automation platforms, we believe AI can transform how public institutions operate and serve their communities, and we bring that same focus to forward-thinking businesses.
+                  That conviction was shaped at Swinburne University, where our founder studied computer science with a specialization in artificial intelligence, then turned theory into practice building real research, analytics, and automation platforms. The lesson was clear: Public Institutions don't just need to adopt technology, they need to truly harness its power to deliver smarter, faster, more human services. It's the same focus we bring to every project, whether for Government, Public Institutions, or the forward-thinking businesses moving alongside them.
                 </p>
               </section>
             </ScrollAnimatedSection>
@@ -72,7 +72,7 @@ const Founder = () => {
               <section className="founder-block">
                 <h3 className="block-title">Our Vision</h3>
                 <p>
-                  To help governments and public institutions harness artificial intelligence as a strategic advantage, building smarter, more efficient, and more transparent services that work better for citizens, while bringing that same expertise to forward-thinking businesses.
+                  To help Governments and Public Institutions harness artificial intelligence as a strategic advantage, building smarter, more efficient, and more transparent services that work better for citizens, while bringing that same expertise to forward-thinking businesses.
                 </p>
               </section>
             </ScrollAnimatedSection>

@@ -6,20 +6,29 @@
 }
 
 .about-eyebrow {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #2f6bed;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-heading {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: #0f1b33;
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
 }
 
 .about-description {
-  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
-  line-height: 1.25;
-  letter-spacing: -0.025em;
-  font-weight: 600;
-  color: #0f1b33;
-  max-width: 880px;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: #475467;
+  max-width: 680px;
   margin: 0 auto;
 }
 
