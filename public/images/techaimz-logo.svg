@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 48" width="224" height="48" fill="none" role="img" aria-label="TechAimz">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap');
+    .ta-wordmark {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: -0.03em;
+    }
+  </style>
+  <defs>
+    <radialGradient id="taCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f8cff" />
+      <stop offset="100%" stop-color="#2f6bed" />
+    </radialGradient>
+  </defs>
+
+  <!-- Network mark -->
+  <g stroke="#2f6bed" stroke-width="1.6" opacity="0.55">
+    <line x1="24" y1="24" x2="24" y2="8" />
+    <line x1="24" y1="24" x2="37.86" y2="16" />
+    <line x1="24" y1="24" x2="37.86" y2="32" />
+    <line x1="24" y1="24" x2="24" y2="40" />
+    <line x1="24" y1="24" x2="10.14" y2="32" />
+    <line x1="24" y1="24" x2="10.14" y2="16" />
+  </g>
+  <g fill="#2f6bed">
+    <circle cx="24" cy="8" r="2.4" />
+    <circle cx="37.86" cy="16" r="2.4" />
+    <circle cx="37.86" cy="32" r="2.4" />
+    <circle cx="24" cy="40" r="2.4" />
+    <circle cx="10.14" cy="32" r="2.4" />
+    <circle cx="10.14" cy="16" r="2.4" />
+  </g>
+  <circle cx="24" cy="24" r="4.5" fill="url(#taCore)" />
+
+  <!-- Wordmark -->
+  <text x="58" y="33" class="ta-wordmark">
+    <tspan fill="#0f1b33">Tech</tspan><tspan fill="#2f6bed">Aimz</tspan>
+  </text>
+</svg>

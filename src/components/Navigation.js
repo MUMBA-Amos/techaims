@@ -18,8 +18,8 @@ const Navigation = () => {
     <>
       <nav className="navigation">
         <div className="nav-container">
-          <Link to="/" className="nav-brand" onClick={close}>
-            <img src="/images/techaimz-logo.png" alt="TechAimz" className="brand-logo" />
+          <Link to="/" className="nav-brand" onClick={close} aria-label="TechAimz home">
+            <img src="/images/techaimz-logo.svg" alt="TechAimz" className="brand-logo" />
           </Link>
 
           <button

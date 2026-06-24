@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
+import FadeIn from './FadeIn';
+import AnimatedHeading from './AnimatedHeading';
 
 const Hero = () => {
   return (
@@ -40,20 +42,29 @@ const Hero = () => {
 
       <div className="hero-inner">
         <div className="hero-content">
-          <h1 className="hero-title">
-            AI solutions for government and the public sector.
-          </h1>
-          <p className="hero-description">
-            We help public institutions work smarter, automating reporting, turning data into insight, and building secure platforms people can trust.
-          </p>
-          <div className="hero-actions">
-            <a href="#contact" className="hero-btn">Get in touch</a>
-            <Link to="/projects" className="hero-link">See our work ›</Link>
-          </div>
+          <AnimatedHeading
+            className="hero-title"
+            text={'AI solutions for government\nand the public sector.'}
+          />
+
+          <FadeIn delay={800} duration={1000}>
+            <p className="hero-description">
+              We help public institutions work smarter — automating reporting,
+              turning data into insight, and building secure platforms people
+              can trust.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={1200} duration={1000}>
+            <div className="hero-actions">
+              <a href="#contact" className="hero-btn">Get in touch</a>
+              <Link to="/projects" className="hero-link">See our work ›</Link>
+            </div>
+          </FadeIn>
         </div>
 
-        <div className="hero-card" aria-hidden="true">
-          <div className="hero-card-inner">
+        <FadeIn delay={400} duration={1000} className="hero-card" style={{}}>
+          <div className="hero-card-inner" aria-hidden="true">
             <svg viewBox="0 0 360 360" className="hero-network" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
@@ -85,7 +96,7 @@ const Hero = () => {
 
             <span className="hero-card-wordmark">Tech<span className="wordmark-accent">Aimz</span></span>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
